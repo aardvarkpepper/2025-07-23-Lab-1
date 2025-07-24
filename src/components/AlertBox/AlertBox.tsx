@@ -6,7 +6,7 @@ export type AlertType = 'success' | 'error' | 'warning' | 'info';
 export interface AlertBoxProps {
   type: AlertType;
   message: string;
-  onClose?: () => void;
+  onClose?: (event: any) => void;
   children?: React.ReactNode;
 }
 // on closer examination, assignment doesn't us to actually implement close functionality.
@@ -15,7 +15,7 @@ export const AlertBox = ({type, message, onClose, children}: AlertBoxProps): Rea
   return (
     <div>
       ALERT TYPE {type}.  MESSAGE: {message}
-      <button onClick={onClose}>
+      <button onClick={(event) => (onClose as Function)(event)} style={{backgroundColor: "pink"}}>
         X
       </button>
       {children}

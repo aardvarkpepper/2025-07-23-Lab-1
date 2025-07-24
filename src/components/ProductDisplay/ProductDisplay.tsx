@@ -13,7 +13,7 @@ export interface ProductDisplayProps {
   product: Product;
   showDescription?: boolean;
   showStockStatus?: boolean;
-  onAddToCart?: (productId: string) => void;
+  onAddToCart?: (event: any, productId: string) => void;
   children?: React.ReactNode;
 }
 
@@ -23,6 +23,10 @@ export const ProductDisplay = ({product, showDescription, showStockStatus, onAdd
       <div>
         {`ID: ${product.id}, NAME: ${product.name}, PRICE: $${product.price}, DESCRIPTION: ${showDescription ? product.description : 'Settings do not allow product description to be shown.'}, IMAGE URL: ${product.imageUrl ? product.imageUrl : 'No product image URL'}, STOCK STATUS: ${showStockStatus ? product.inStock : 'Settings do not allow stock status to be shown.'}`}
       </div>
+      {onAddToCart ? (
+      <button onClick={(event) => onAddToCart} style={{backgroundColor: "pink"}}>
+        Add Item to Cart
+      </button>) : null}
       {children ? children : null }
     </div>
   )

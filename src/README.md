@@ -8,3 +8,4 @@ https://react.dev/learn/passing-props-to-a-component
 https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example/
 https://legacy.reactjs.org/docs/faq-functions.html
 https://blog.logrocket.com/react-onclick-event-handlers-guide/
+https://www.w3schools.com/jsref/prop_style_display.asp
