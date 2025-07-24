@@ -8,6 +8,8 @@ import { ProductDisplay } from './components/ProductDisplay/ProductDisplay';
 import { AlertBoxTest } from './components/AlertBox/AlertBox.test';
 import { ProductDisplayTest } from './components/ProductDisplay/ProductDisplay.test';
 import { UserProfileCardTest } from './components/UserProfileCard/UserProfileCard.test';
+
+import { App2 } from './components/App2';
 import './App.css'
 
 /**
@@ -34,24 +36,31 @@ import './App.css'
 
 function App() {
 
-  // const [isClosed, setIsClosed] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [cartItems, setCartItems] = useState<string[]>([]);
+
+  const handleAddToCart2 = (productId: string) => {
+    setCartItems([...cartItems, productId]);
+    setShowAlert(true);
+  };
+
 
   const closeMe = (event: any) => {
     event.target.parentElement.style.display = "none";
-    alert (`Element closed; refresh page to recover element.`)
+    alert(`Element closed; refresh page to recover element.`)
     // the button is in a div, so it's got to have a parent element
   }
 
   const handleUserEdit = (event: any, userId: string) => {
     console.log(event);
     console.log(`New user ID: ${userId}`);
-    alert (`New user ID: ${userId}`);
+    alert(`New user ID: ${userId}`);
   }
 
   const handleAddToCart = (event: any, productId: string) => {
     console.log(event);
     console.log(`${productId} has been added to cart.`);
-    alert (`${productId} has been added to cart.`);
+    alert(`${productId} has been added to cart.`);
   }
 
   /**
@@ -92,6 +101,9 @@ function App() {
       <div>=============================================================</div>
       <h2>Product Display Tests</h2>
       <ProductDisplayTest />
+      <div>=============================================================</div>
+      <h2>Component Composition</h2>
+      <App2 />
     </>
   )
 }
