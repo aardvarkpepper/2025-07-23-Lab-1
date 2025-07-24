@@ -4,9 +4,9 @@ export const AlertBoxTest = () => {
 
   const closeMe = (event: any) => {
     event.target.parentElement.style.display = "none";
+    alert (`Element closed; refresh page to recover element.`)
     // the button is in a div, so it's got to have a parent element
   }
-
   return (
     <>
       <AlertBox type='success' message='A hamster has reported success.' onClose={closeMe}>

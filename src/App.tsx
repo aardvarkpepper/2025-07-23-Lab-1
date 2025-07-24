@@ -22,25 +22,36 @@ import './App.css'
  * 
  * check if event handling is correct - pass up and down.
  * 
+ * Note how ProductIDInput is sent as the prop to ProductDisplay.  ProductDisplay attempts to invoke with different arguments but fails.  I think this is correct, as basically an invocation is passed from the parent.
+ * 
+ * The child element *must* have two arguments (event, and a string).  But when the invocation is passed in from the parent, the child ignores its own arguments to use the parent.  That makes sense in some ways.  After all, if I really intended to pass the function itself, I would actually pass the function.
+ * 
+ * that is pass handleAddToCart, not () => handleAddToCart(event, argument).  Testing this confirms the supposition.
+ * 
+ * However, it's weird that the arguments in the child get ignored, yet are demanded.  It's weird.
+ * 
  */
 
 function App() {
 
-  const [isClosed, setIsClosed] = useState(false);
+  // const [isClosed, setIsClosed] = useState(false);
 
   const closeMe = (event: any) => {
     event.target.parentElement.style.display = "none";
+    alert (`Element closed; refresh page to recover element.`)
     // the button is in a div, so it's got to have a parent element
   }
 
   const handleUserEdit = (event: any, userId: string) => {
     console.log(event);
     console.log(`New user ID: ${userId}`);
+    alert (`New user ID: ${userId}`);
   }
 
   const handleAddToCart = (event: any, productId: string) => {
     console.log(event);
     console.log(`${productId} has been added to cart.`);
+    alert (`${productId} has been added to cart.`);
   }
 
   /**
@@ -67,7 +78,7 @@ function App() {
         </div>
       </UserProfileCard>
       <div>-------------------------------------------------------------</div>
-      <ProductDisplay product={{ id: 'ProductID', name: 'Product Name', price: 300, description: 'Product Description', inStock: false }} showDescription={true} showStockStatus={true} onAddToCart={() => handleAddToCart(event, 'addProductIdToCart')}>
+      <ProductDisplay product={{ id: 'ProductID', name: 'Product Name', price: 300, description: 'Product Description', inStock: false }} showDescription={true} showStockStatus={true} onAddToCart={() => handleAddToCart(event, 'ProductIDInput')}>
         <div>
           Product Display Card Child 1
         </div>

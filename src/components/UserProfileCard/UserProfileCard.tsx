@@ -16,6 +16,7 @@ export interface UserProfileCardProps {
   children?: React.ReactNode;
 }
 
+// Displays user profile card.  Take optional arguments to show email and role respectively.  Takes optional function to be invoked on editing user ID. (Though user ID probably should never really be edited).  Function functionality not required by assignment.
 export const UserProfileCard = ({user, showEmail, showRole, onEdit, children }: UserProfileCardProps): React.ReactNode => {
   return (
     <div>

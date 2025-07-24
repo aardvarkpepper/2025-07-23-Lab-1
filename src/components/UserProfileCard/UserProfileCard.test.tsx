@@ -5,6 +5,7 @@ export const UserProfileCardTest = () => {
   const handleUserEdit = (event: any, userId: string) => {
     console.log(event);
     console.log(`New user ID: ${userId}`);
+    alert (`New user ID: ${userId}`);
   }
 
   return (

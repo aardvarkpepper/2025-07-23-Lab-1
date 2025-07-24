@@ -11,6 +11,7 @@ export interface AlertBoxProps {
 }
 // on closer examination, assignment doesn't us to actually implement close functionality.
 
+// Should be some sort of pseudo-alert box with type of alert, message, and some function on closing alert.
 export const AlertBox = ({type, message, onClose, children}: AlertBoxProps): React.ReactNode => {
   return (
     <div>
