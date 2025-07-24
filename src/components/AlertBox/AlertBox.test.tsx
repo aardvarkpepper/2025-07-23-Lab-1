@@ -14,11 +14,13 @@ export const AlertBoxTest = () => {
           AlertBox Test 1:  Variant text.
         </div>
       </AlertBox>
-            <AlertBox type='error' message='A hamster has reported an error.' onClose={closeMe}>
+      <div>-------------------------------------------------------------</div>
+      <AlertBox type='error' message='A hamster has reported an error.' onClose={closeMe}>
         <div>
           AlertBox Test 2:  One child.  Below Alertbox has no children and self-closing tag.
         </div>
       </AlertBox>
+      <div>-------------------------------------------------------------</div>
       <AlertBox type='warning' message='A hamster is issuing a warning.' onClose={closeMe} />
     </>
   )

@@ -7,6 +7,7 @@ import { ProductDisplay } from './components/ProductDisplay/ProductDisplay';
 
 import { AlertBoxTest } from './components/AlertBox/AlertBox.test';
 import { ProductDisplayTest } from './components/ProductDisplay/ProductDisplay.test';
+import { UserProfileCardTest } from './components/UserProfileCard/UserProfileCard.test';
 import './App.css'
 
 /**
@@ -50,6 +51,7 @@ function App() {
 
   return (
     <>
+      <h1> AlertBox,  UserProfileCard, ProductDisplay</h1>
       <AlertBox type='success' message='hamster' onClose={closeMe}>
         <div>
           AlertBox Child 1
@@ -58,20 +60,26 @@ function App() {
           AlertBox Child 2
         </div>
       </AlertBox>
+      <div>-------------------------------------------------------------</div>
       <UserProfileCard user={{ id: 'UserID', name: 'User Name', email: 'user@userdomain.org', role: 'User Role', avatarUrl: 'http://userthingy.com' }} showEmail={false} showRole={true} onEdit={handleUserEdit}>
         <div>
           User Profile Card Child 1
         </div>
       </UserProfileCard>
+      <div>-------------------------------------------------------------</div>
       <ProductDisplay product={{ id: 'ProductID', name: 'Product Name', price: 300, description: 'Product Description', inStock: false }} showDescription={true} showStockStatus={true} onAddToCart={() => handleAddToCart(event, 'addProductIdToCart')}>
         <div>
           Product Display Card Child 1
         </div>
       </ProductDisplay>
       <div>=============================================================</div>
+      <h2>Alert Box Tests</h2>
       <AlertBoxTest />
       <div>=============================================================</div>
+      <h2>User Profile Card Tests</h2>
+      <UserProfileCardTest />
       <div>=============================================================</div>
+      <h2>Product Display Tests</h2>
       <ProductDisplayTest />
     </>
   )
