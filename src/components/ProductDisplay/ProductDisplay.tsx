@@ -25,7 +25,7 @@ export const ProductDisplay = ({product, showDescription, showStockStatus, onAdd
       </div>
       {onAddToCart ? (
       <button onClick={(event) => onAddToCart} style={{backgroundColor: "pink"}}>
-        Add Item to Cart
+        Add Item to Cart (Implementation Not Required)
       </button>) : null}
       {children ? children : null }
     </div>

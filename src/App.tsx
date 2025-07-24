@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { AlertBox } from './components/AlertBox/AlertBox';
 import { UserProfileCard } from './components/UserProfileCard/UserProfileCard';
 import { ProductDisplay } from './components/ProductDisplay/ProductDisplay';
+
+import { AlertBoxTest } from './components/AlertBox/AlertBox.test';
+import { ProductDisplayTest } from './components/ProductDisplay/ProductDisplay.test';
 import './App.css'
 
 /**
@@ -65,6 +68,11 @@ function App() {
           Product Display Card Child 1
         </div>
       </ProductDisplay>
+      <div>=============================================================</div>
+      <AlertBoxTest />
+      <div>=============================================================</div>
+      <div>=============================================================</div>
+      <ProductDisplayTest />
     </>
   )
 }
